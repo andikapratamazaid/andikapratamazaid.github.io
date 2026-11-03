@@ -64,6 +64,8 @@ h2{font-size:clamp(26px,4vw,36px);letter-spacing:-.02em;line-height:1.15;margin:
 .card{background:var(--surf);border:1px solid var(--ln);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
 .th{height:104px;display:flex;align-items:flex-end;padding:12px 14px;color:#fff;font-weight:800;font-size:22px;letter-spacing:-.02em}
 .c-data{background:linear-gradient(135deg,#1F3864,#2f5597)}
+.c-ai{background:linear-gradient(135deg,#0369a1,#38bdf8)}
+.subh{display:flex;align-items:center;gap:10px;font-size:21px;font-weight:800;letter-spacing:.01em;margin:6px 0 14px}
 .c-web{background:linear-gradient(135deg,#a8470f,#ED7D31)}
 .c-biz{background:linear-gradient(135deg,#27465f,#4c7a8f)}
 .c-book{background:linear-gradient(135deg,#3a2f63,#6d5bb0)}
@@ -485,7 +487,8 @@ svg.ic{overflow:visible}
 
 <section id="portfolio"><div class="w">
 <h2 class="sh" data-id="Portofolio Unggulan" data-en="Featured Portfolio"><svg class="ic"><use href="#i-folder"/></svg>Portofolio Unggulan</h2>
-<div class="grid" id="feat"></div>
+<h3 class="subh"><svg class="ic"><use href="#i-cpu"/></svg>AI</h3><div class="grid" id="feat-ai"></div>
+<h3 class="subh" style="margin-top:34px"><svg class="ic"><use href="#i-chart"/></svg>Data</h3><div class="grid" id="feat-data"></div>
 </div></section>
 
 <section id="projects" class="alt"><div class="w">
@@ -565,18 +568,22 @@ var CFG={
 };
 var GH="https://github.com/andikapratamazaid/";
 var PG="https://andikapratamazaid.github.io/";
-/* Tambah project baru: salin satu baris di P, ubah isinya. cat: data | web | biz | book */
+/* Tambah project baru: salin satu baris di P, ubah isinya. cat: data | ai | web | biz | book */
 var P=[
-{t:"Data Science Perusahaan Pertambangan",d:"Capstone dari analisis eksploratif sampai API dan Docker.",cat:"data",tech:["Python","pandas","API","Docker"],u:GH+"data-science-pertambangan",l:"Lihat Kode",f:1},
+{t:"SIAGA — Asisten Kerja Lapangan",d:"Asisten chat berbasis peran untuk pekerja site konstruksi: briefing harian, checklist K3, permit, dan AI Solusi Cepat berbasis playbook resmi.",cat:"ai",tech:["Laravel","JavaScript","AI Agent"],u:GH+"siaga",l:"Lihat Kode",f:1},
+{t:"Text-to-SQL Analytics Agent",d:"Agent dwibahasa yang mengubah pertanyaan menjadi SQL aman di database Olist asli (99.441 order), dengan guardrail read-only berlapis dan 33 tes lolos.",cat:"ai",tech:["Python","SQLite","LLM"],u:GH+"text2sql-analytics-agent",l:"Lihat Kode",f:1},
+{t:"BoQ / RAB Cost Checker Agent",d:"Agent audit BoQ dan RAB konstruksi terhadap referensi resmi HSPK 2026: aritmetika, duplikat, dan harga satuan, dengan sitasi terverifikasi.",cat:"ai",tech:["Python","LLM","Konstruksi"],u:GH+"boq-cost-checker-agent",l:"Lihat Kode",f:1},
+{t:"Voice-of-Customer Agent Indonesia",d:"Agent analisis sentimen dan emosi ulasan Bahasa Indonesia di data asli PRDECT-ID (5.400 ulasan Tokopedia), akurasi sentimen 95,3%.",cat:"ai",tech:["Python","NLP","LLM"],u:GH+"voc-agent-indonesia",l:"Lihat Kode",f:1},
+{t:"Data Science Perusahaan Pertambangan",d:"Capstone dari analisis eksploratif sampai API dan Docker.",cat:"data",tech:["Python","pandas","API","Docker"],u:GH+"data-science-pertambangan",l:"Lihat Kode"},
 {t:"Analisis Hilirisasi Nikel Indonesia 2012–2024",d:"Analisis perdagangan nikel memakai data UN Comtrade.",cat:"data",tech:["Python","UN Comtrade"],u:GH+"analisis-hilirisasi-nikel",l:"Lihat Kode",f:1},
 {t:"Analisis Program MBG 2025–2026",d:"Analisis program berdasarkan data resmi BGN, Kemenkes, dan survei.",cat:"data",tech:["Python","Data resmi"],u:GH+"analisis-program-mbg",l:"Lihat Kode"},
 {t:"Prediksi Churn Pelanggan Telekomunikasi",d:"Model churn dengan ambang keputusan berbasis profit kampanye retensi.",cat:"data",tech:["Python","scikit-learn"],u:GH+"telco-churn-prediction",l:"Lihat Kode",f:1},
 {t:"Deteksi Fraud Transaksi Kartu",d:"Deteksi fraud pada 284 ribu transaksi, fokus PR-AUC dan ambang alert berbasis biaya review.",cat:"data",tech:["Python","scikit-learn"],u:GH+"fraud-detection-card-transactions",l:"Lihat Kode",f:1},
-{t:"Dashboard KPI Operasional Fraud",d:"Dashboard monitoring model fraud: volume alert, precision, nilai fraud tertangkap, dan net savings.",cat:"data",tech:["PostgreSQL","Python","HTML"],u:GH+"fraud-ops-kpi-dashboard",l:"Lihat Kode",f:1},
+{t:"Dashboard KPI Operasional Fraud",d:"Dashboard monitoring model fraud: volume alert, precision, nilai fraud tertangkap, dan net savings.",cat:"data",tech:["PostgreSQL","Python","HTML"],u:GH+"fraud-ops-kpi-dashboard",l:"Lihat Kode"},
 {t:"Segmentasi RFM & Retensi Kohort E-Commerce",d:"Segmentasi pelanggan dan retensi kohort dari 99 ribu order Olist memakai SQL.",cat:"data",tech:["PostgreSQL","SQL"],u:GH+"ecommerce-rfm-cohort-sql",l:"Lihat Kode",f:1},
-{t:"KAMERA·AI",d:"Deteksi wajah dan objek yang berjalan langsung di peramban.",cat:"data",tech:["JavaScript","AI di peramban"],u:PG+"kamera-ai-deteksi-wajah",l:"Lihat Live",f:1},
-{t:"Website PT Nusa Inteligensi Media",d:"Situs perusahaan ventura video AI.",cat:"web",tech:["HTML","CSS"],u:PG+"website-pt-nusa",l:"Lihat Live",f:1},
-{t:"Website PT Zeed Enjiniring Construction",d:"Situs perusahaan konstruksi.",cat:"web",tech:["HTML","CSS"],u:PG+"website-zeed-enjiniring",l:"Lihat Live",f:1},
+{t:"KAMERA·AI",d:"Deteksi wajah dan objek yang berjalan langsung di peramban.",cat:"ai",tech:["JavaScript","AI di peramban"],u:PG+"kamera-ai-deteksi-wajah",l:"Lihat Live",f:1},
+{t:"Website PT Nusa Inteligensi Media",d:"Situs perusahaan ventura video AI.",cat:"web",tech:["HTML","CSS"],u:PG+"website-pt-nusa",l:"Lihat Live"},
+{t:"Website PT Zeed Enjiniring Construction",d:"Situs perusahaan konstruksi.",cat:"web",tech:["HTML","CSS"],u:PG+"website-zeed-enjiniring",l:"Lihat Live"},
 {t:"English Arena SMK",d:"Game edukasi bahasa Inggris untuk siswa SMK, dimainkan langsung di peramban.",cat:"web",tech:["HTML","JavaScript"],u:PG+"english-arena-smk",l:"Main Sekarang"},
 {t:"Dataset Harga Nursery Cikopo",d:"Dataset harga tanaman nursery untuk analisis agribisnis.",cat:"data",tech:["Dataset","CSV"],u:GH+"data-harga-nursery",l:"Lihat Kode"},
 {t:"Analisis Paket Pekerjaan Agribisnis",d:"Analisis portofolio paket pekerjaan agribisnis dari company profile PT Modern Jaya Konstruksi.",cat:"data",tech:["Python","pandas","Power BI"],u:GH+"analisis-paket-agribisnis",l:"Lihat Kode"},
@@ -606,9 +613,9 @@ function bcard(b){
 }
 document.getElementById("books").innerHTML=BK.map(bcard).join("");
 function IC(n,c){return '<svg class="ic'+(c?" "+c:"")+'"><use href="#i-'+n+'"/></svg>'}
-var CI={data:"chart",web:"globe",biz:"rocket",book:"book",agri:"sprout"};
-var CAT={all:"Semua",data:"Data & AI",web:"Website & Produk",biz:"Bisnis & Ventura",book:"Buku & Edukasi",agri:"Agribisnis"};
-var CN={data:"c-data",web:"c-web",biz:"c-biz",book:"c-book",agri:"c-agri"};
+var CI={data:"chart",ai:"cpu",web:"globe",biz:"rocket",book:"book",agri:"sprout"};
+var CAT={all:"Semua",data:"Data",ai:"AI",web:"Website & Produk",biz:"Bisnis & Ventura",book:"Buku & Edukasi",agri:"Agribisnis"};
+var CN={data:"c-data",ai:"c-ai",web:"c-web",biz:"c-biz",book:"c-book",agri:"c-agri"};
 function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;")}
 function card(p){
   var m=p.tech.map(function(x){return "<span>"+esc(x)+"</span>"}).join("")+"<span>"+esc(CAT[p.cat])+"</span>"+(p.st?'<span class="st">'+esc(p.st)+"</span>":"");
@@ -617,10 +624,12 @@ function card(p){
   return '<article class="card"><div class="th '+CN[p.cat]+'" aria-hidden="true">'+IC(CI[p.cat],"big")+esc(ini)+'</div><div class="cb"><h3>'+esc(p.t)+"</h3><p>"+esc(p.d)+'</p><div class="meta">'+m+"</div>"+a+"</article>";
 }
 document.getElementById("skills").innerHTML=SK.map(function(s){return "<li>"+IC(s[0])+s[1]+"</li>"}).join("");
-document.getElementById("feat").innerHTML=P.filter(function(p){return p.f}).map(card).join("");
+document.getElementById("feat-ai").innerHTML=P.filter(function(p){return p.f&&p.cat=="ai"}).map(card).join("");
+document.getElementById("feat-data").innerHTML=P.filter(function(p){return p.f&&p.cat=="data"}).map(card).join("");
 var all=P.concat(PROD,BK.map(function(b){return {t:b.t,d:b.sub||b.d,cat:"book",tech:[b.lab],u:b.buy?"https://lynk.id/omzethack":"",l:"Lihat di Lynk.id"}}));
 var CATD={
- data:{t:"Data &amp; AI",d:"Analisis data, dataset, dan prototipe AI yang bisa diverifikasi di GitHub.",c:["#2f5597","#1F3864"],i:"chart",u:"project"},
+ data:{t:"Data",d:"Analisis data dan dataset yang bisa diverifikasi di GitHub.",c:["#2f5597","#1F3864"],i:"chart",u:"project"},
+ ai:{t:"AI",d:"Agent dan aplikasi AI yang berjalan dan terverifikasi, dari asisten site sampai analisis ulasan pelanggan.",c:["#38bdf8","#0369a1"],i:"cpu",u:"project"},
  web:{t:"Website &amp; Produk",d:"Website perusahaan dan produk digital yang sudah live.",c:["#f6a05f","#ED7D31"],i:"globe",u:"project"},
  biz:{t:"Bisnis &amp; Ventura",d:"Usaha yang sedang dibangun, dari konstruksi sampai video AI.",c:["#2ba89c","#0f766e"],i:"rocket",u:"usaha"},
  agri:{t:"Agribisnis",d:"Studi kelayakan, model keuangan, dan proposal investasi untuk proyek perkebunan dan pertanian.",c:["#6aa84f","#2f7d32"],i:"sprout",u:"project"},
