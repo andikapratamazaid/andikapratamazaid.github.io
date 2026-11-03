@@ -570,7 +570,7 @@ var GH="https://github.com/andikapratamazaid/";
 var PG="https://andikapratamazaid.github.io/";
 /* Tambah project baru: salin satu baris di P, ubah isinya. cat: data | ai | web | biz | book */
 var P=[
-{t:"SIAGA — Asisten Kerja Lapangan",d:"Asisten chat berbasis peran untuk pekerja site konstruksi: briefing harian, checklist K3, permit, dan AI Solusi Cepat berbasis playbook resmi.",cat:"ai",tech:["Laravel","JavaScript","AI Agent"],u:GH+"siaga",l:"Lihat Kode",f:1},
+{t:"SIAGA — Asisten Kerja Lapangan",d:"Asisten chat berbasis peran untuk pekerja site konstruksi: briefing harian, checklist K3, permit, dan AI Solusi Cepat berbasis playbook resmi.",cat:"ai",tech:["Laravel","JavaScript","AI Agent"],u:GH+"siaga",l:"Lihat Kode",u2:"https://muse.ai/s/siaga-sistem-asisten-kerja-lapangan-xgb6rx0xnxfxvxgxnxg/1LxfgDNHa_nUYu2FS2yuNwjUyiCKMrh5SHzN0WmPCRs",l2:"Buka Aplikasi",f:1},
 {t:"Text-to-SQL Analytics Agent",d:"Agent dwibahasa yang mengubah pertanyaan menjadi SQL aman di database Olist asli (99.441 order), dengan guardrail read-only berlapis dan 33 tes lolos.",cat:"ai",tech:["Python","SQLite","LLM"],u:GH+"text2sql-analytics-agent",l:"Lihat Kode",f:1},
 {t:"BoQ / RAB Cost Checker Agent",d:"Agent audit BoQ dan RAB konstruksi terhadap referensi resmi HSPK 2026: aritmetika, duplikat, dan harga satuan, dengan sitasi terverifikasi.",cat:"ai",tech:["Python","LLM","Konstruksi"],u:GH+"boq-cost-checker-agent",l:"Lihat Kode",f:1},
 {t:"Voice-of-Customer Agent Indonesia",d:"Agent analisis sentimen dan emosi ulasan Bahasa Indonesia di data asli PRDECT-ID (5.400 ulasan Tokopedia), akurasi sentimen 95,3%.",cat:"ai",tech:["Python","NLP","LLM"],u:GH+"voc-agent-indonesia",l:"Lihat Kode",f:1},
@@ -619,7 +619,7 @@ var CN={data:"c-data",ai:"c-ai",web:"c-web",biz:"c-biz",book:"c-book",agri:"c-ag
 function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;")}
 function card(p){
   var m=p.tech.map(function(x){return "<span>"+esc(x)+"</span>"}).join("")+"<span>"+esc(CAT[p.cat])+"</span>"+(p.st?'<span class="st">'+esc(p.st)+"</span>":"");
-  var a=p.u?'<a class="go" href="'+p.u+'" target="_blank" rel="noopener">'+p.l+IC("arrow-up-right")+"</a>":"";
+  var a=p.u?'<a class="go" href="'+p.u+'" target="_blank" rel="noopener">'+p.l+IC("arrow-up-right")+"</a>":"";if(p.u2)a+='<a class="go" href="'+p.u2+'" target="_blank" rel="noopener" style="margin-left:16px">'+p.l2+IC("arrow-up-right")+"</a>";
   var ini=p.t.replace(/^PT /,"").split(" ").slice(0,2).map(function(w){return w[0]}).join("");
   return '<article class="card"><div class="th '+CN[p.cat]+'" aria-hidden="true">'+IC(CI[p.cat],"big")+esc(ini)+'</div><div class="cb"><h3>'+esc(p.t)+"</h3><p>"+esc(p.d)+'</p><div class="meta">'+m+"</div>"+a+"</article>";
 }
