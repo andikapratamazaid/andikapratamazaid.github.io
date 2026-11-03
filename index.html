@@ -65,6 +65,14 @@ h2{font-size:clamp(26px,4vw,36px);letter-spacing:-.02em;line-height:1.15;margin:
 .th{height:104px;display:flex;align-items:flex-end;padding:12px 14px;color:#fff;font-weight:800;font-size:22px;letter-spacing:-.02em}
 .c-data{background:linear-gradient(135deg,#1F3864,#2f5597)}
 .c-ai{background:linear-gradient(135deg,#0369a1,#38bdf8)}
+.cover{position:relative;aspect-ratio:16/9;display:flex;flex-direction:column;justify-content:flex-end;padding:16px 18px;color:#fff;background:linear-gradient(120deg,#0b2a52,#1F3864 55%,#2c4f7c);overflow:hidden}
+.cover:before{content:"";position:absolute;inset:0;background:radial-gradient(420px 200px at 85% 0%,rgba(237,125,49,.35),transparent 60%)}
+.ccat{position:absolute;top:12px;left:16px;font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;padding:4px 10px;border-radius:999px;color:#fff}
+.cvm{position:relative;font-size:32px;font-weight:800;letter-spacing:-.02em;line-height:1.05}
+.cvl{position:relative;font-size:12.5px;opacity:.88;margin-top:3px;line-height:1.45}
+.meta .tlbl{background:none!important;border:none!important;padding:0!important;font-weight:600;opacity:.65}
+#feat-ai,#feat-data{grid-template-columns:repeat(2,1fr)}
+@media(max-width:820px){#feat-ai,#feat-data{grid-template-columns:1fr}}
 .th2{display:flex;align-items:center;gap:9px;padding:16px 16px 0}.tic{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;color:#fff;flex:none}.tic .ic{width:16px;height:16px}.tcat{font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;opacity:.6}.cb{padding-top:10px}
 .subh{display:flex;align-items:center;gap:10px;font-size:21px;font-weight:800;letter-spacing:.01em;margin:6px 0 14px}
 .c-web{background:linear-gradient(135deg,#a8470f,#ED7D31)}
@@ -571,26 +579,26 @@ var GH="https://github.com/andikapratamazaid/";
 var PG="https://andikapratamazaid.github.io/";
 /* Tambah project baru: salin satu baris di P, ubah isinya. cat: data | ai | web | biz | book */
 var P=[
-{t:"SIAGA — Asisten Kerja Lapangan",d:"Asisten chat berbasis peran untuk pekerja site konstruksi: briefing harian, checklist K3, permit, dan AI Solusi Cepat berbasis playbook resmi.",cat:"ai",tech:["Laravel","JavaScript","AI Agent"],u:GH+"siaga",l:"Lihat Kode",u2:"https://muse.ai/s/siaga-sistem-asisten-kerja-lapangan-xgb6rx0xnxfxvxgxnxg/1LxfgDNHa_nUYu2FS2yuNwjUyiCKMrh5SHzN0WmPCRs",l2:"Buka Aplikasi",f:1},
-{t:"Text-to-SQL Analytics Agent",d:"Agent dwibahasa yang mengubah pertanyaan menjadi SQL aman di database Olist asli (99.441 order), dengan guardrail read-only berlapis dan 33 tes lolos.",cat:"ai",tech:["Python","SQLite","LLM"],u:GH+"text2sql-analytics-agent",l:"Lihat Kode",f:1},
-{t:"BoQ / RAB Cost Checker Agent",d:"Agent audit BoQ dan RAB konstruksi terhadap referensi resmi HSPK 2026: aritmetika, duplikat, dan harga satuan, dengan sitasi terverifikasi.",cat:"ai",tech:["Python","LLM","Konstruksi"],u:GH+"boq-cost-checker-agent",l:"Lihat Kode",f:1},
-{t:"Voice-of-Customer Agent Indonesia",d:"Agent analisis sentimen dan emosi ulasan Bahasa Indonesia di data asli PRDECT-ID (5.400 ulasan Tokopedia), akurasi sentimen 95,3%.",cat:"ai",tech:["Python","NLP","LLM"],u:GH+"voc-agent-indonesia",l:"Lihat Kode",f:1},
-{t:"Data Science Perusahaan Pertambangan",d:"Capstone dari analisis eksploratif sampai API dan Docker.",cat:"data",tech:["Python","pandas","API","Docker"],u:GH+"data-science-pertambangan",l:"Lihat Kode"},
-{t:"Analisis Hilirisasi Nikel Indonesia 2012–2024",d:"Analisis perdagangan nikel memakai data UN Comtrade.",cat:"data",tech:["Python","UN Comtrade"],u:GH+"analisis-hilirisasi-nikel",l:"Lihat Kode",f:1},
-{t:"Analisis Program MBG 2025–2026",d:"Analisis program berdasarkan data resmi BGN, Kemenkes, dan survei.",cat:"data",tech:["Python","Data resmi"],u:GH+"analisis-program-mbg",l:"Lihat Kode"},
-{t:"Prediksi Churn Pelanggan Telekomunikasi",d:"Model churn dengan ambang keputusan berbasis profit kampanye retensi.",cat:"data",tech:["Python","scikit-learn"],u:GH+"telco-churn-prediction",l:"Lihat Kode",f:1},
-{t:"Deteksi Fraud Transaksi Kartu",d:"Deteksi fraud pada 284 ribu transaksi, fokus PR-AUC dan ambang alert berbasis biaya review.",cat:"data",tech:["Python","scikit-learn"],u:GH+"fraud-detection-card-transactions",l:"Lihat Kode",f:1},
-{t:"Dashboard KPI Operasional Fraud",d:"Dashboard monitoring model fraud: volume alert, precision, nilai fraud tertangkap, dan net savings.",cat:"data",tech:["PostgreSQL","Python","HTML"],u:GH+"fraud-ops-kpi-dashboard",l:"Lihat Kode"},
-{t:"Segmentasi RFM & Retensi Kohort E-Commerce",d:"Segmentasi pelanggan dan retensi kohort dari 99 ribu order Olist memakai SQL.",cat:"data",tech:["PostgreSQL","SQL"],u:GH+"ecommerce-rfm-cohort-sql",l:"Lihat Kode",f:1},
-{t:"KAMERA·AI",d:"Deteksi wajah dan objek yang berjalan langsung di peramban.",cat:"ai",tech:["JavaScript","AI di peramban"],u:PG+"kamera-ai-deteksi-wajah",l:"Lihat Live",f:1},
-{t:"Website PT Nusa Inteligensi Media",d:"Situs perusahaan ventura video AI.",cat:"web",tech:["HTML","CSS"],u:PG+"website-pt-nusa",l:"Lihat Live"},
-{t:"Website PT Zeed Enjiniring Construction",d:"Situs perusahaan konstruksi.",cat:"web",tech:["HTML","CSS"],u:PG+"website-zeed-enjiniring",l:"Lihat Live"},
-{t:"English Arena SMK",d:"Game edukasi bahasa Inggris untuk siswa SMK, dimainkan langsung di peramban.",cat:"web",tech:["HTML","JavaScript"],u:PG+"english-arena-smk",l:"Main Sekarang"},
-{t:"Dataset Harga Nursery Cikopo",d:"Dataset harga tanaman nursery untuk analisis agribisnis.",cat:"data",tech:["Dataset","CSV"],u:GH+"data-harga-nursery",l:"Lihat Kode"},
-{t:"Analisis Paket Pekerjaan Agribisnis",d:"Analisis portofolio paket pekerjaan agribisnis dari company profile PT Modern Jaya Konstruksi.",cat:"data",tech:["Python","pandas","Power BI"],u:GH+"analisis-paket-agribisnis",l:"Lihat Kode"},
-{t:"Kebun Kelapa Terintegrasi (20 ha)",d:"Model keuangan 10 tahun, pemetaan buyer di enam segmen, dan strategi offtake untuk kebun kelapa dari hulu ke hilir.",cat:"agri",tech:["Model keuangan","Sensitivitas","Offtake"],st:"Studi kelayakan · simulasi"},
-{t:"Budidaya Sorgum & Indigofera (40 ha)",d:"Studi kelayakan, model tiga skenario, proposal investasi, dan struktur organisasi dengan ekspansi bertahap 5, 15, lalu 40 ha.",cat:"agri",tech:["Feasibility","3 skenario","Pitch deck"],st:"Proposal investasi"},
-{t:"Kebun Durian 2 Ha",d:"Perencanaan investasi dan lingkup teknik: sumur bor, pompa, reservoir, dan irigasi zonasi untuk 333 pohon.",cat:"agri",tech:["CAPEX","Irigasi","RFQ vendor"],st:"Tahap perencanaan · 2026"}
+{t:"SIAGA — Asisten Kerja Lapangan",cm:"14 playbook",cl:"AI Solusi Cepat untuk kasus lapangan, selalu dari playbook resmi",d:"Asisten chat berbasis peran untuk pekerja site konstruksi: briefing harian, checklist K3, permit, dan AI Solusi Cepat berbasis playbook resmi.",cat:"ai",tech:["Laravel","JavaScript","AI Agent"],u:GH+"siaga",l:"Lihat Kode",u2:"https://muse.ai/s/siaga-sistem-asisten-kerja-lapangan-xgb6rx0xnxfxvxgxnxg/1LxfgDNHa_nUYu2FS2yuNwjUyiCKMrh5SHzN0WmPCRs",l2:"Buka Aplikasi",f:1},
+{t:"Text-to-SQL Analytics Agent",cm:"33 tes lolos",cl:"Guardrail read-only berlapis, 14 dari 14 serangan terblokir",d:"Agent dwibahasa yang mengubah pertanyaan menjadi SQL aman di database Olist asli (99.441 order), dengan guardrail read-only berlapis dan 33 tes lolos.",cat:"ai",tech:["Python","SQLite","LLM"],u:GH+"text2sql-analytics-agent",l:"Lihat Kode",f:1},
+{t:"BoQ / RAB Cost Checker Agent",cm:"100% presisi",cl:"Evaluasi 609 error sintetis dan audit HSPK 2026 dengan sitasi terverifikasi",d:"Agent audit BoQ dan RAB konstruksi terhadap referensi resmi HSPK 2026: aritmetika, duplikat, dan harga satuan, dengan sitasi terverifikasi.",cat:"ai",tech:["Python","LLM","Konstruksi"],u:GH+"boq-cost-checker-agent",l:"Lihat Kode",f:1},
+{t:"Voice-of-Customer Agent Indonesia",cm:"95,3%",cl:"Akurasi sentimen pada data asli PRDECT-ID, 5.400 ulasan Tokopedia",d:"Agent analisis sentimen dan emosi ulasan Bahasa Indonesia di data asli PRDECT-ID (5.400 ulasan Tokopedia), akurasi sentimen 95,3%.",cat:"ai",tech:["Python","NLP","LLM"],u:GH+"voc-agent-indonesia",l:"Lihat Kode",f:1},
+{t:"Data Science Perusahaan Pertambangan",cm:"API + Docker",cl:"Capstone data science dari analisis eksploratif sampai deployment",d:"Capstone dari analisis eksploratif sampai API dan Docker.",cat:"data",tech:["Python","pandas","API","Docker"],u:GH+"data-science-pertambangan",l:"Lihat Kode"},
+{t:"Analisis Hilirisasi Nikel Indonesia 2012–2024",cm:"2012–2024",cl:"Analisis perdagangan nikel memakai data UN Comtrade",d:"Analisis perdagangan nikel memakai data UN Comtrade.",cat:"data",tech:["Python","UN Comtrade"],u:GH+"analisis-hilirisasi-nikel",l:"Lihat Kode",f:1},
+{t:"Analisis Program MBG 2025–2026",cm:"2025–2026",cl:"Berdasarkan data resmi BGN, Kemenkes, dan survei",d:"Analisis program berdasarkan data resmi BGN, Kemenkes, dan survei.",cat:"data",tech:["Python","Data resmi"],u:GH+"analisis-program-mbg",l:"Lihat Kode"},
+{t:"Prediksi Churn Pelanggan Telekomunikasi",cm:"Profit-first",cl:"Ambang keputusan berbasis profit kampanye retensi",d:"Model churn dengan ambang keputusan berbasis profit kampanye retensi.",cat:"data",tech:["Python","scikit-learn"],u:GH+"telco-churn-prediction",l:"Lihat Kode",f:1},
+{t:"Deteksi Fraud Transaksi Kartu",cm:"284 rb",cl:"Transaksi dianalisis, fokus PR-AUC dan ambang alert berbasis biaya review",d:"Deteksi fraud pada 284 ribu transaksi, fokus PR-AUC dan ambang alert berbasis biaya review.",cat:"data",tech:["Python","scikit-learn"],u:GH+"fraud-detection-card-transactions",l:"Lihat Kode",f:1},
+{t:"Dashboard KPI Operasional Fraud",cm:"Net savings",cl:"Monitoring volume alert, precision, nilai fraud tertangkap, dan net savings",d:"Dashboard monitoring model fraud: volume alert, precision, nilai fraud tertangkap, dan net savings.",cat:"data",tech:["PostgreSQL","Python","HTML"],u:GH+"fraud-ops-kpi-dashboard",l:"Lihat Kode"},
+{t:"Segmentasi RFM & Retensi Kohort E-Commerce",cm:"99 rb order",cl:"Segmentasi pelanggan dan retensi kohort Olist memakai SQL",d:"Segmentasi pelanggan dan retensi kohort dari 99 ribu order Olist memakai SQL.",cat:"data",tech:["PostgreSQL","SQL"],u:GH+"ecommerce-rfm-cohort-sql",l:"Lihat Kode",f:1},
+{t:"KAMERA·AI",cm:"Live",cl:"Deteksi wajah dan objek yang berjalan langsung di peramban",d:"Deteksi wajah dan objek yang berjalan langsung di peramban.",cat:"ai",tech:["JavaScript","AI di peramban"],u:PG+"kamera-ai-deteksi-wajah",l:"Lihat Live",f:1},
+{t:"Website PT Nusa Inteligensi Media",cm:"3 bahasa",cl:"Situs studio video AI dalam Indonesia, Inggris, dan Mandarin",d:"Situs perusahaan ventura video AI.",cat:"web",tech:["HTML","CSS"],u:PG+"website-pt-nusa",l:"Lihat Live"},
+{t:"Website PT Zeed Enjiniring Construction",cm:"Live",cl:"Situs perusahaan konstruksi yang tayang di GitHub Pages",d:"Situs perusahaan konstruksi.",cat:"web",tech:["HTML","CSS"],u:PG+"website-zeed-enjiniring",l:"Lihat Live"},
+{t:"English Arena SMK",cm:"Langsung main",cl:"Game edukasi bahasa Inggris untuk siswa SMK di peramban",d:"Game edukasi bahasa Inggris untuk siswa SMK, dimainkan langsung di peramban.",cat:"web",tech:["HTML","JavaScript"],u:PG+"english-arena-smk",l:"Main Sekarang"},
+{t:"Dataset Harga Nursery Cikopo",cm:"Dataset",cl:"Harga tanaman nursery untuk analisis agribisnis",d:"Dataset harga tanaman nursery untuk analisis agribisnis.",cat:"data",tech:["Dataset","CSV"],u:GH+"data-harga-nursery",l:"Lihat Kode"},
+{t:"Analisis Paket Pekerjaan Agribisnis",cm:"Portofolio",cl:"Paket pekerjaan agribisnis dari company profile PT Modern Jaya Konstruksi",d:"Analisis portofolio paket pekerjaan agribisnis dari company profile PT Modern Jaya Konstruksi.",cat:"data",tech:["Python","pandas","Power BI"],u:GH+"analisis-paket-agribisnis",l:"Lihat Kode"},
+{t:"Kebun Kelapa Terintegrasi (20 ha)",cm:"20 ha",cl:"Model keuangan 10 tahun dan strategi offtake enam segmen buyer",d:"Model keuangan 10 tahun, pemetaan buyer di enam segmen, dan strategi offtake untuk kebun kelapa dari hulu ke hilir.",cat:"agri",tech:["Model keuangan","Sensitivitas","Offtake"],st:"Studi kelayakan · simulasi"},
+{t:"Budidaya Sorgum & Indigofera (40 ha)",cm:"40 ha",cl:"Tiga skenario dengan ekspansi bertahap 5, 15, lalu 40 ha",d:"Studi kelayakan, model tiga skenario, proposal investasi, dan struktur organisasi dengan ekspansi bertahap 5, 15, lalu 40 ha.",cat:"agri",tech:["Feasibility","3 skenario","Pitch deck"],st:"Proposal investasi"},
+{t:"Kebun Durian 2 Ha",cm:"2 ha",cl:"Perencanaan sumur bor, pompa, reservoir, dan irigasi zonasi",d:"Perencanaan investasi dan lingkup teknik: sumur bor, pompa, reservoir, dan irigasi zonasi untuk 333 pohon.",cat:"agri",tech:["CAPEX","Irigasi","RFQ vendor"],st:"Tahap perencanaan · 2026"}
 ];
 var PROD=[
 {t:"PT Nusa Inteligensi Media",d:"Ventura video AI.",cat:"biz",tech:["Ventura"]},
@@ -619,9 +627,9 @@ var CAT={all:"Semua",data:"Data",ai:"AI",web:"Website & Produk",biz:"Bisnis & Ve
 var CN={data:"c-data",ai:"c-ai",web:"c-web",biz:"c-biz",book:"c-book",agri:"c-agri"};
 function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;")}
 function card(p){
-  var m=p.tech.map(function(x){return "<span>"+esc(x)+"</span>"}).join("")+"<span>"+esc(CAT[p.cat])+"</span>"+(p.st?'<span class="st">'+esc(p.st)+"</span>":"");
+  var m='<span class="tlbl">Tools:</span>'+p.tech.map(function(x){return "<span>"+esc(x)+"</span>"}).join("")+(p.st?'<span class="st">'+esc(p.st)+"</span>":"");
   var a=p.u?'<a class="go" href="'+p.u+'" target="_blank" rel="noopener">'+p.l+IC("arrow-up-right")+"</a>":"";if(p.u2)a+='<a class="go" href="'+p.u2+'" target="_blank" rel="noopener">'+p.l2+IC("arrow-up-right")+"</a>";
-  return '<article class="card"><div class="th2"><span class="tic '+CN[p.cat]+'">'+IC(CI[p.cat])+'</span><span class="tcat">'+esc(CAT[p.cat])+'</span></div><div class="cb"><h3>'+esc(p.t)+"</h3><p>"+esc(p.d)+'</p><div class="meta">'+m+"</div>"+a+"</article>";
+  return '<article class="card"><div class="cover"><span class="ccat '+CN[p.cat]+'">'+esc(CAT[p.cat])+'</span><div class="cvm">'+esc(p.cm||CAT[p.cat])+'</div>'+(p.cl?'<div class="cvl">'+esc(p.cl)+"</div>":"")+'</div><div class="cb"><h3>'+esc(p.t)+"</h3><p>"+esc(p.d)+'</p><div class="meta">'+m+"</div>"+a+"</article>";
 }
 document.getElementById("skills").innerHTML=SK.map(function(s){return "<li>"+IC(s[0])+s[1]+"</li>"}).join("");
 document.getElementById("feat-ai").innerHTML=P.filter(function(p){return p.f&&p.cat=="ai"}).map(card).join("");
