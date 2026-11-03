@@ -65,6 +65,7 @@ h2{font-size:clamp(26px,4vw,36px);letter-spacing:-.02em;line-height:1.15;margin:
 .th{height:104px;display:flex;align-items:flex-end;padding:12px 14px;color:#fff;font-weight:800;font-size:22px;letter-spacing:-.02em}
 .c-data{background:linear-gradient(135deg,#1F3864,#2f5597)}
 .c-ai{background:linear-gradient(135deg,#0369a1,#38bdf8)}
+.th2{display:flex;align-items:center;gap:9px;padding:16px 16px 0}.tic{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;color:#fff;flex:none}.tic .ic{width:16px;height:16px}.tcat{font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;opacity:.6}.cb{padding-top:10px}
 .subh{display:flex;align-items:center;gap:10px;font-size:21px;font-weight:800;letter-spacing:.01em;margin:6px 0 14px}
 .c-web{background:linear-gradient(135deg,#a8470f,#ED7D31)}
 .c-biz{background:linear-gradient(135deg,#27465f,#4c7a8f)}
@@ -619,9 +620,8 @@ var CN={data:"c-data",ai:"c-ai",web:"c-web",biz:"c-biz",book:"c-book",agri:"c-ag
 function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;")}
 function card(p){
   var m=p.tech.map(function(x){return "<span>"+esc(x)+"</span>"}).join("")+"<span>"+esc(CAT[p.cat])+"</span>"+(p.st?'<span class="st">'+esc(p.st)+"</span>":"");
-  var a=p.u?'<a class="go" href="'+p.u+'" target="_blank" rel="noopener">'+p.l+IC("arrow-up-right")+"</a>":"";if(p.u2)a+='<a class="go" href="'+p.u2+'" target="_blank" rel="noopener" style="margin-left:16px">'+p.l2+IC("arrow-up-right")+"</a>";
-  var ini=p.t.replace(/^PT /,"").split(" ").slice(0,2).map(function(w){return w[0]}).join("");
-  return '<article class="card"><div class="th '+CN[p.cat]+'" aria-hidden="true">'+IC(CI[p.cat],"big")+esc(ini)+'</div><div class="cb"><h3>'+esc(p.t)+"</h3><p>"+esc(p.d)+'</p><div class="meta">'+m+"</div>"+a+"</article>";
+  var a=p.u?'<a class="go" href="'+p.u+'" target="_blank" rel="noopener">'+p.l+IC("arrow-up-right")+"</a>":"";if(p.u2)a+='<a class="go" href="'+p.u2+'" target="_blank" rel="noopener">'+p.l2+IC("arrow-up-right")+"</a>";
+  return '<article class="card"><div class="th2"><span class="tic '+CN[p.cat]+'">'+IC(CI[p.cat])+'</span><span class="tcat">'+esc(CAT[p.cat])+'</span></div><div class="cb"><h3>'+esc(p.t)+"</h3><p>"+esc(p.d)+'</p><div class="meta">'+m+"</div>"+a+"</article>";
 }
 document.getElementById("skills").innerHTML=SK.map(function(s){return "<li>"+IC(s[0])+s[1]+"</li>"}).join("");
 document.getElementById("feat-ai").innerHTML=P.filter(function(p){return p.f&&p.cat=="ai"}).map(card).join("");
