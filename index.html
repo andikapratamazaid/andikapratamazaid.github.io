@@ -125,7 +125,7 @@ h2{font-size:clamp(26px,4vw,36px);letter-spacing:-.02em;line-height:1.15;margin:
 .ct{display:grid;grid-template-columns:1fr 1fr;gap:28px}
 @media(max-width:720px){.ct{grid-template-columns:1fr}}
 form{display:grid;gap:10px}
-input,textarea{font:inherit;padding:11px 12px;border:1px solid var(--ln);border-radius:10px;background:var(--bg);color:var(--tx);width:100%}
+input,textarea,select{font:inherit;padding:11px 12px;border:1px solid var(--ln);border-radius:10px;background:var(--bg);color:var(--tx);width:100%}
 footer{padding:28px 0 40px;color:var(--mut);font-size:14px;border-top:1px solid var(--ln)}
 footer .w{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
 .hide{display:none!important}
@@ -206,7 +206,7 @@ h2.sh .ic{width:46px;height:46px;padding:11px;border-radius:14px;background:var(
 .bk:hover .buy,.bk:focus-visible .buy{opacity:1;transform:none}
 @media(hover:none){.buy{opacity:1;transform:none}}
 .bk h3{font-family:var(--disp);font-size:18px;letter-spacing:-.02em}
-input:focus,textarea:focus{outline:none;border-color:var(--or);box-shadow:0 0 0 3px rgba(237,125,49,.25)}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--or);box-shadow:0 0 0 3px rgba(237,125,49,.25)}
 .so{display:flex;gap:8px}
 .so a{display:grid;place-items:center;width:38px;height:38px;border:1px solid var(--ln);border-radius:50%;color:var(--mut);transition:transform .2s,background .2s,color .2s}
 .so a:hover{background:var(--or);color:#1a1205;border-color:var(--or);transform:translateY(-3px)}
@@ -540,6 +540,14 @@ svg.ic{overflow:visible}
 </div>
 <form id="f">
 <input id="n" placeholder="Nama / Name" aria-label="Nama" required>
+<select id="k" aria-label="Kategori pesan" required>
+<option value="" disabled selected data-id="Pilih kategori pesan" data-en="Choose a message category">Pilih kategori pesan</option>
+<option data-id="Penawaran Kerja Sama" data-en="Partnership Offer">Penawaran Kerja Sama</option>
+<option data-id="Penawaran Kerja" data-en="Job Offer">Penawaran Kerja</option>
+<option data-id="Minta Info" data-en="Ask for Info">Minta Info</option>
+<option data-id="Konsultasi Bisnis" data-en="Business Consultation">Konsultasi Bisnis</option>
+<option data-id="Lainnya" data-en="Other">Lainnya</option>
+</select>
 <textarea id="m" rows="4" placeholder="Pesan / Message" aria-label="Pesan" required></textarea>
 <button class="btn p" type="submit" style="cursor:pointer;font:700 15px 'Plus Jakarta Sans',system-ui,sans-serif" data-id="Kirim lewat WhatsApp" data-en="Send via WhatsApp"><svg class="ic"><use href="#i-send"/></svg>Kirim lewat WhatsApp</button>
 </form>
@@ -666,7 +674,10 @@ wa.href="https://wa.me/"+CFG.wa+"?text="+hi;
 em.href="mailto:"+CFG.email;
 document.getElementById("f").addEventListener("submit",function(e){
   e.preventDefault();
-  var t="Halo Andika, saya "+document.getElementById("n").value+". "+document.getElementById("m").value;
+  var ko=document.getElementById("k").selectedOptions[0];
+  var kat=cl=="en"?ko.getAttribute("data-en"):ko.getAttribute("data-id");
+  var nv=document.getElementById("n").value,mv=document.getElementById("m").value;
+  var t=cl=="en"?("Hello Andika, I'm "+nv+".\nCategory: "+kat+"\n\n"+mv):("Halo Andika, saya "+nv+".\nKategori: "+kat+"\n\n"+mv);
   window.open("https://wa.me/"+CFG.wa+"?text="+encodeURIComponent(t),"_blank","noopener");
 });
 var li=document.getElementById("li");
