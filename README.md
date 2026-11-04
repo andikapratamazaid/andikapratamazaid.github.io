@@ -1,4 +1,4 @@
-# Andika Pratama Zaid — Personal Website
+# Andika Pratama Zaid - Personal Website
 
 Personal branding and portfolio website of **Andika Pratama Zaid**,
 Business Development Specialist focused on new ventures, partnerships,
